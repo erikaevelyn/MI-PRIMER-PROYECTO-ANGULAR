@@ -1,3 +1,19 @@
-<p>ESTE ES MI COMPONENTE GENERADO.
-    {{nombre}}
+<p>Mi producto es: {{nombre}}
+
+    {{datos.edad}}
 </p>
+
+
+<button (click)="asignarNombre()">Clickeame</button>
+
+<p *ngIf="mostrar">
+    Mi nombre es {{nombreBoton}}
+</p>
+
+<p *ngFor="let ingrediente of ingredientes; let i  = index"> - {{ i + 1}} {{ingrediente }}</p>
+
+
+<form [formGroup]="registroForm">
+    <input type="text" formControlName="PrimerNombre" placeholder="Ingrese su 1er nombre">
+    <input type="text" formControlName="SegundoNombre" placeholder="Ingrese su 2do nombre">
+</form>

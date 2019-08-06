@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-producto',
@@ -29,15 +29,23 @@ export class ProductoComponent implements OnInit {
   }
 
   registroForm = new FormGroup({
-    PrimerNombre: new FormControl(''),
-    SegundoNombre: new FormControl(''),
+    primerNombre: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    segundoNombre: new FormControl(''),
     edad: new FormControl('')
   })
+
+  onSubmit(formulario){
+    console.log(formulario);
+  }
+
+
   
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  
 
 }
